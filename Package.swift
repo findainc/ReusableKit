@@ -8,17 +8,14 @@ let package = Package(
     .iOS(.v8), .tvOS(.v9)
   ],
   products: [
-    .library(name: "ReusableKit", targets: ["ReusableKit"]),
-    .library(name: "RxReusableKit", targets: ["RxReusableKit"]),
+    .library(name: "ReusableKit", targets: ["ReusableKit"])
   ],
   dependencies: [
-    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.0.0")),
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
   ],
   targets: [
     .target(name: "ReusableKit"),
-    .target(name: "RxReusableKit", dependencies: ["ReusableKit", "RxSwift", "RxCocoa"]),
-    .testTarget(name: "ReusableKitTests", dependencies: ["ReusableKit"]),
-    .testTarget(name: "RxReusableKitTests", dependencies: ["RxReusableKit"]),
+    .testTarget(name: "ReusableKitTests", dependencies: ["ReusableKit"])
   ],
   swiftLanguageVersions: [.v5]
 )
